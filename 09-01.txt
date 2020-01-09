@@ -1,0 +1,35 @@
+Q1. What is the difference between creating string object and string literal?
+Ans: In java, String can be initialized as Literal or Object.
+String Literal
+
+String a = "ABC";
+In this case a String is created in String pool. Now if I initialize
+String b = "ABC";
+And put if condition - if (a==b) this would return true as both a and b point to one literal in pool
+String object
+String a = new String ("a");
+String b = new String("a");
+If (a==b) returns false in this case as the references point to different objects and (a.equals (b)) returns true.
+Q2. What is Singleton Design Pattern?
+	If you are in Java then you must have used the new keyword. This new keyword creates an Object of class whenever required. But there are some scenarios where you don't want to create individual Object for a different purpose. Singleton Pattern ensures that one and only one Object is instantiated for a given class. Whenever an object of a given class is required, only single(No more than one object) Object get returned.
+Implementation of Singleton Design Pattern
+Now you know what is the Singleton Design Pattern. Next step would be to implement it. There are different ways you can implement Singleton. Before you start implementation, you need to understand what are the different ways to create an Object.
+Different Ways to create an Object
+new Keyword
+Using the New Instance (Reflection)
+Cloning of Object
+Using Classloader
+Using Object De-Serialization
+Ensure a class has only one instance and provide a global point of access to it.
+Q3. What is the purpoose of using match()?
+Ans: Method matches() checks whether the String is matching with the specified regular expression. If the String fits in the specified regular expression then this method returns true else it returns false. Below is the syntax of the method:
+public boolean matches(String regex)
+It throws PatternSyntaxException - if the specified regular expression is not valid.
+Q4. What is the purpoose of using intern()?
+Ans: Java String intern() method is used for getting the string from the memory if it is already present. This method ensures that all the same strings share the same memory. For example, creating a string "hello" 10 times using intern() method would ensure that there will be only one instance of "Hello" in the memory and all the 10 references point to the same instance.
+Q5. what is the use ReplaceAll()?
+The replaceAll() method replaces each substring of this string that matches the given regular expression with the given replacement.
+An invocation of this method of the form str.replaceAll(regex, repl) yields exactly the same result as the expression
+Pattern.compile(regex).matcher(str).replaceAll(repl)
+Note that backslashes (\) and dollar signs ($) in the replacement string may cause the results to be different than if it were being treated as a literal replacement	string;	see	Matcher.replaceAll.	Use Matcher.quoteReplacement(java.lang.String) to suppress the special meaning of these characters, if desired.
+Syntax:   replaceAll(String regex, String replacement)
