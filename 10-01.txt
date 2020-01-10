@@ -1,0 +1,61 @@
+Q1. Why and When to use Maps?
+Maps are perfect to use for key-value association mapping such as dictionaries. The maps are used to perform lookups by keys or when someone wants to retrieve and update elements by keys. Some examples are:
+A map of error codes and their descriptions.
+A map of zip codes and cities.
+A map of managers and employees. Each manager (key) is associated with a list of employees (value) he manages.
+A map of classes and students. Each class (key) is associated with a list of students (value).
+Methods in Map Interface:
+public Object put(Object key, Object value): This method is used to insert an entry in this map.
+public void putAll(Map map): This method is used to insert the specified map in this map.
+public Object remove(Object key): This method is used to delete an entry for the specified key.
+public Object get(Object key):This method is used to return the value for the specified key.
+public boolean containsKey(Object key): This method is used to search the specified key from this map.
+public Set keySet(): This method is used to return the Set view containing all the keys.
+public Set entrySet(): This method is used to return the Set view containing all the keys and values.
+Q2. What is Hash map?
+HashMap is a Map based collection class that is used for storing Key & value pairs, it is denoted as HashMap<Key, Value> or HashMap<K, V>. This class makes no guarantees as to the order of the map. It is similar to the Hashtable class except that it is unsynchronized and permits nulls(null values and null key).
+It is not an ordered collection which means it does not return the keys and values in the same order in which they have been inserted into the HashMap. It does not sort the stored keys and Values. You must need to import java.util.HashMap or its super class in order to use the HashMap class and methods.
+Methods:
+void clear(): It removes all the key and value pairs from the specified Map.
+Object clone(): It returns a copy of all the mappings of a map and used for cloning them into another map.
+boolean containsKey(Object key): It is a boolean function which returns true or false based on whether the specified key is found in the map.
+boolean containsValue(Object Value): Similar to containsKey() method, however it looks for the specified value instead of key.
+Value get(Object key): It returns the value for the specified key.
+boolean isEmpty(): It checks whether the map is empty. If there are no key-value mapping present in the map then this function returns true else false.
+Set keySet(): It returns the Set of the keys fetched from the map.
+value put(Key k, Value v): Inserts key value mapping into the map. Used in the above example.
+int size(): Returns the size of the map - Number of key-value mappings.
+Collection values(): It returns a collection of values of map.
+Value remove(Object key): It removes the key-value pair for the specified key. Used in the above example.
+void putAll(Map m): Copies all the elements of a map to the another specified map.
+Q3.What is hash table?
+This class implements a hash table, which maps keys to values. Any non-null object can be used as a key or as a value. Hashtable is similar to HashMap except it is synchronized. There are few more differences between HashMap and Hashtable class.
+Methods of Hashtable class:
+1) void clear(): Removes all the key-value mappings from Hashtable and makes it empty. Clears this hashtable so that it contains no keys..
+2) Object clone(): Creates a shallow copy of this hashtable. All the structure of the hashtable itself is copied, but the keys and values are not cloned. This is a relatively expensive operation.
+
+3) boolean contains(Object value): Tests if some key maps into the specified value in this hashtable. This operation is more expensive than the containsKey method.
+Note that this method is identical in functionality to containsValue, (which is part of the Map interface in the collections framework).
+4) boolean isEmpty(): Tests if this hashtable maps no keys to values.
+5) Enumeration keys(): Returns an enumeration of the keys contained in the hash table.
+6) Object put(Object key, Object value): Maps the specified key to the specified value in this hashtable.
+7) void rehash(): Increases the size of the hash table and rehashes all of its keys.
+8) Object remove(Object key): Removes the key (and its corresponding value) from this hashtable.
+9) int size(): Returns the number of key-value mappings present in Hashtable.
+10) String toString(): Returns the string equivalent of a hash table.
+11) boolean containsKey(Object key): Tests if the specified object is a key in this hashtable.
+12) boolean containsValue(Object value): Tests if the specified object is a value in this hashtable. Returns true if some value equal to value exists within the hash table. Returns false if the value isn't found.
+13) Enumeration elements(): Returns an enumeration of the values contained in the hash table.
+14) Object get(Object key): Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
+Q4. How hashset is working internally?
+Ans: HashSet implements Set interface. It guarantees uniqueness. It is achieved by storing elements as keys with the same value always. HashSet does not have any method to retrieve the object from the HashSet. There is only a way to get objects from the HashSet via Iterator. When we create an object of HashSet, it internally creates an instance of HashMap with default initial capacity 16.
+HashSet uses a constructor HashSet(int capacity) that represents how many elements can be stored in the HashSet. The capacity may increase automatically when more elements to be store.
+Q5. In try and finally, any exception will occur who will take care of that?
+Ans: try block, return staatement will take the control to main class.
+public static int test()  {
+        try {  
+                //return 0;  
+                return 100;  }  
+        finally {  
+            System.out.println("finally trumps return.");
+        }
