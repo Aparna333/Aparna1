@@ -1,0 +1,48 @@
+Q1. What is purpose of using distict()?
+Ans: Distict() is used for removing duplicates only.
+Collection<String> list = Arrays.asList("A", "B", "C", "D", "A", "B", "C");
+List<String> distinctElements = list.stream().distinct().collect(Collectors.toList());
+System.out.println(distinctElements);
+Q2. Purpose of using parallelStream()?
+Ans: Parallel stream enables parallel computing that involves processing elements concurrently in parallel with each element in a seperate thread.
+Parallelstream has a much higher overhead compared to a sequential one.Parallel stream should be used only when there is a huge amount of elements to process and there is a performance problem with processing these elements. Also the parallel stream operations should be independent.
+Stream stream = Stream.of("John", "Mike", "Ryan","Donald", "Matthew");
+Stream parallelStream = stream.parallel();
+Another way to create parallelstream is using parallelStream() method.
+Stream parallelStream = Arrays.asList("John", "Mike", "Ryan","Donald", "Matthew").parallelStream();
+Q3. What is peek()?
+Ans: The Stream.peek() method is mainly to support debugging, where you want to see the elements as they flow past a certain point in a pipeline.
+The Stream.peek() method returns a stream consisting of the elements of this stream, additionally performing the provided action on each element as elements are consumed from the resulting stream.
+For parallel stream pipelines, the action may be called at whatever time and in whatever thread the element is made available by the upstream operation. If the action modifies shared state, it is responsible for providing the required synchronization.
+Example:
+Stream.of("bus", "car", "bycle", "flight", "train")
+                .filter(e -> e.length() > 3)
+                .peek(e -> System.out.println("Filtered value: " + e))
+                .map(String::toUpperCase)
+                .peek(e -> System.out.println("Mapped value: " + e))
+                .collect(Collectors.toList());
+Q4. What is filter()?
+Ans: Stream filter(Predicate predicate) returns a stream consisting of the elements of this stream that match the given predicate. This is an intermediate operation. These operations are always lazy i.e, executing an intermediate operation such as filter() does not actually perform any filtering, but instead creates a new stream that, when traversed, contains the elements of the initial stream that match the given predicate.
+Stream<String> stream = Stream.of("Geeks", "fOr", 
+                                          "GEEKSQUIZ", "GeeksforGeeks"); 
+               stream.filter(str -> Character.isUpperCase(str.charAt(1)))  .forEach(System.out::println); 
+Q5. How to create user defined Exceptioon?
+Ans: User Defined Exception or custom exception is creating your own exception class and throws that exception using ‘throw’ keyword. This can be done by extending the class Exception.
+All exceptions must be a child of Throwable.
+If you want to write a checked exception that is automatically enforced by the Handle or Declare Rule, you need to extend the Exception class.
+If you want to write a runtime exception, you need to extend the RuntimeException class.
+To create a user defined exception extend one of the above mentioned classes. To display the message override the toString() method or, call the superclass parameterized constructor by passing the message in String format.
+Q6. Date.min() and date.max() ?
+Ans: min() and max() methods to find the min & max value in streams. These methods are used for finding min & max values in different types of streams such as stream of chars, strings, dates etc. We just have to change the parameter that we pass in this method based on the type of stream.
+max(Comparator.comparing(Integer::valueOf)): To get the max value from stream of numbers.
+max(Comparator.comparing(LocalDate::toEpochDay)): To get the max date from stream of dates.
+Q7. What is flatMap()?
+Ans: flatMap() method is a Java8 programming operation which takes a single function as an argument. This function accepts the T parameter as an input argument and returns a stream of R parameter. Syntax:  <R> Stream<R> flatMap(Function<? super T,? extends Stream<? extends R>> mapper)
+Stream.map() vs. Stream.flatMap()
+The Stream’s map() method produces or returns a single result value, which is sent to the Output stream
+The Stream’s flatMap() method produces or returns a Stream of elements
+The flatMap() method is a combination of Map and Flattening operation
+The map() method is only used for modification while the flatMap() method is used for both flattening and modification
+The flatMap() method replaces a value with a Stream and join all Streams together
+Q8. String pool and String constant?
+Ans: String Pool in Java is a pool of Strings which is stored in Java Heap Memory
