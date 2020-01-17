@@ -1,0 +1,31 @@
+Q1. What is checked Exception?
+Ans: All exceptions other than Runtime Exceptions are known as Checked exceptions as the compiler checks them during compilation to see whether the programmer has handled them or not. If these exceptions are not handled/declared in the program, you will get compilation error. Example: SQLException, IOException, ClassNotFoundException ,EOF Exception etc,
+Q2. What is uncheked Exception?
+Ans: Runtime Exceptions are also known as Unchecked Exceptions. These exceptions are not checked at compile-time so compiler does not check whether the programmer has handled them or not but it’s the responsibility of the programmer to handle these exceptions and provide a safe exit. 
+Example:  ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException etc.
+Q3. Differentiate between error and exception?
+Error: Errors indicate that something severe enough has gone wrong, the application should crash rather than try to handle the error.
+Exception: Exceptions are events that occurs in the code. A programmer can handle such conditions and take necessary corrective actions.
+Examples:
+NullPointerException – When you try to use a reference that points to null.
+ArithmeticException – When bad data is provided by user, for example, when you try to divide a number by zero this exception occurs because dividing a number by zero is undefined.
+ArrayIndexOutOfBoundsException – When you try to access the elements of an array out of its bounds, for example array size is 5 
+ Q4.Who is responsible to handle checked and unchecked exception?
+Ans: Checked Exceptions must be handled by Developer itself.
+And handling Unchecked Exceptions by Developer are said to be optional and it is taken care of by JVM itself.
+Q5. Which is the base class of all exception and error?
+Ans: Throwable is the base class of all exceptions and errors.
+
+Q6. Can we write only try block without catch and finally blocks?
+Ans: We cannot have try block alone.
+We can use either of the five ways:
+i) we can write try with catch
+ii) we can write try with finally
+iii) we can write try catch and finally in same sequence
+iv) we can write try with multiple catch s and finally
+v) we can write try with multiple catch s
+Q7.Can we throw an exception manually? If yes, how?
+Ans: The rethrow expression causes the originally thrown object to be rethrown.
+Because the exception has already been caught at the scope in which the rethrow expression occurs, it is rethrown out to the next enclosing try block. Therefore, it cannot be handled by catch blocks at the scope in which the rethrow expression occurred. Any catch blocks for the enclosing try block have an opportunity to catch the exception.
+
+
