@@ -1,0 +1,28 @@
+
+<h3>Angular 2 ngClass and ngStyle demo</h3>
+
+<div [style.color]="'orange'">style using property syntax</div>
+<div [className]="'blue'">css class using property syntax</div>
+{{space |slice:0:8}}<hr>
+{{sky |lowercase}}<hr>
+{{obj|json}}
+<br /><br />
+
+<input [(ngModel)]="fontstyle" />
+<button (click)="size = size + 1">+</button>
+<button (click)="size = size - 1">-</button>
+
+<div [ngStyle]="{'color': color, 'font-size': size + 'px','font-style':fontstyle}">
+  style using ngStyle
+</div>
+  
+<!-- br /><br/>
+
+<div [ngClass]="['bold-text', 'green']">array of classes</div>
+<div [ngClass]="'italic-text blue'">string of classes</div>
+<div [ngClass]="{'small-text': true, 'red': true}">object/map of classes</div>
+
+<br /><br/>
+
+<span [ngClass]="displayText">toggled with ngClass</span> <button (click)="toggle()">Toggle</button -->
+
