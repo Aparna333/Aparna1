@@ -1,0 +1,38 @@
+<b>NgIf with HTML Elements </b><br/>
+<p *ngIf="isValid">
+	Data is valid.
+</p>
+<input type="button" value="submit" (click)="shide()"/>
+<h1 *ngIf="!isValid">
+	Data is not valid.
+</h1>
+
+
+<!--<p *ngIf="count%3==0">printed
+{{count}}</p>-->
+<table>
+  <div *ngFor="let id of ids">
+  <tr> <td>{{id}}</td>
+ </tr>
+ <!-- <div *ngIf="id%2 == 0">
+	<div [ngClass]="'one'">Even Number</div>
+  </div> 	
+  <div *ngIf="id%2 == 1">
+	<div [ngClass]="'two'">Odd Number</div>
+  </div> 	-->
+</div>
+</table>
+<table class="hello" border=1>
+<div *ngFor="let usr of users">
+  <tr><td>{{usr.age}}</td>
+      <td>{{usr.name}}</td>
+      <td>{{usr.email}}</td>
+  </tr>
+ <!-- <div *ngIf="usr.age%2 == 0">
+	<div [ngClass]="'one'">Even Number</div>
+  </div> 	
+  <div *ngIf="usr.age%2 == 1">
+	<div [ngClass]="'two'">Odd Number</div>
+  </div> 	-->
+</div>
+</table>
