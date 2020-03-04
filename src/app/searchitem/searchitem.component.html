@@ -1,0 +1,77 @@
+<div style="width: 300px;">
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="itemname">ItemName: </label>
+            <input type="text" class="form-control" id="itemName" required [(ngModel)]="itemName" name="itemName">
+          </div>
+          <div class="btn-group">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+       </form>
+ </div>
+ <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <ul>
+            <li *ngFor="let item of items">
+            <h3 class="card-title">Item Details</h3>
+              <h4>itemId: {{item.itemId}}<br>
+                ItemName: {{item.itemName}}<br>
+                Price: {{item.price}} <br>
+                StockNumber: {{item.stockNumber}}</h4>
+            <button type="submit" class="btn btn-primary">AddToCart</button>
+            </li>
+          </ul>
+        </div>
+</div>
+<div style="width: 300px;">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="itemname">ItemName: </label>
+        <input type="text" class="form-control" id="itemName" required [(ngModel)]="itemName" name="itemName">
+      </div>
+      <div class="form-group">
+            <label for="lastname">Manufacturer: </label>
+            <input type="text" class="form-control" manufacturer="manufacturer" required [(ngModel)]="manufacturer" name="manufacturer">
+      </div>
+      <div class="form-group">
+            <label for="lastname">Price: </label>
+            <input type="number" class="form-control" price="price" required [(ngModel)]="price" name="price">
+      </div>
+      <div class="form-group">
+            <label for="lastname">Description: </label>
+            <input type="text" class="form-control" description="description" required [(ngModel)]="description" name="description">
+      </div>
+
+      <div class="form-group">
+            <label for="lastname">StockNumber: </label>
+            <input type="number" class="form-control" description="stockNumber" required [(ngModel)]="stockNumber" name="stockNumber">
+      </div>
+      <div class="form-group">
+            <label for="lastname">remarks: </label>
+            <input type="text" class="form-control" description="remarks" required [(ngModel)]="remarks" name="remarks">
+     </div>
+      <div class="btn-group">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="btn-group">
+        <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+      <div class="btn-group">
+        <button type="update" class="btn btn-success" (click) = "updateitem()">update</button>
+      </div>
+
+<div style="width: 300px;">
+  <form (ngSubmit)="deleteitem()">
+        <div class="form-group">
+            <label for="lastname">delete sellerid : </label>
+            <input type="text" class="form-control" deleteditem="deleteditem" required [(ngModel)]="deleteditem" name="deleteditem">
+        </div>
+        <div class="btn-group">
+           <button type="submit" class="btn btn-success">delete</button>
+        </div>
+    </form>
+ </div>
+ 

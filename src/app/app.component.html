@@ -1,0 +1,27 @@
+<!--<div style="padding: 20px;">
+  <h1 style="color: blue">{{title}}</h1>
+  <h3>{{description}}</h3>
+  <nav>
+   <a routerLink="customer" class="btn btn-primary active" role="button" routerLinkActive="active">Search</a>
+
+    <button class="btn btn-primary"  
+            (click)="getItem()">Search</button>  
+  </nav>
+  <router-outlet></router-outlet>
+  {{items|json}}
+</div>
+<app-searchitem></app-searchitem> 
+  <ul>
+    <li *ngFor="let item of items">
+       <app-item-details [items]='item'></app-item-details>
+       <h4>{{item.itemName}}</h4>
+    </li>
+  </ul> -->
+<nav>
+  <a routerLink="searchitem" class="btn btn-primary" role="button">Search</a>
+  <a routerLink="item-details" class="btn btn-success" role="button">AddItem</a>
+  <router-outlet></router-outlet>
+</nav>
+
+  <!--<input type="button" value="Search" (click)="getItem()"/> -->
+
